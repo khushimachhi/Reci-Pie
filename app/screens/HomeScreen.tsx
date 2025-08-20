@@ -1,13 +1,10 @@
-import { View, Text, FlatList, TouchableOpacity, Image, Button } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
 
 const recipes = [
   { id: "1", title: "Pav Bhaji", image: require("../../assets/images/pavbhaji.jpg") },
   { id: "2", title: "Pizza", image: require("../../assets/images/pizza.jpg") },
   { id: "3", title: "Gulab Jamun", image: require("../../assets/images/gulabjamun.jpg") },
-  { id: "4", title: "Biryani", image: require("../../assets/images/biryani.jpg") },
-  { id: "5", title: "Momos", image: require("../../assets/images/momos.jpg") },
-  { id: "6", title: "Sandwich", image: require("../../assets/images/sandwich.jpg") },
 ];
 
 export default function HomeScreen() {
@@ -16,15 +13,14 @@ export default function HomeScreen() {
   return (
     <View style={{ flex: 1, padding: 16, backgroundColor: "#fff" }}>
       <Text style={{ fontSize: 24, fontWeight: "bold", marginBottom: 12 }}>
-        Recipes
-      </Text>
+       Recipes
+      </Text>  
       <FlatList
         data={recipes}
         keyExtractor={(item) => item.id}
-        numColumns={2}
         renderItem={({ item }) => (
           <TouchableOpacity
-            style={{ flex: 1, margin: 6, alignItems: "center" }}
+            style={{ marginBottom: 16 }}
             onPress={() =>
               router.push({
                 pathname: "/recipe/[id]",
@@ -32,8 +28,10 @@ export default function HomeScreen() {
               })
             }
           >
-            <Image source={item.image} style={{ width: "100%", height: 150, borderRadius: 12 }}/>
-            <Text style={{ fontSize: 18, marginTop: 6, textAlign: "center" }}>{item.title}</Text>
+            
+            
+            <Text style={{ fontSize: 18, marginTop: 6 }}>{item.title}</Text>
+
             
           </TouchableOpacity>
         )}
