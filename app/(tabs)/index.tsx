@@ -14,7 +14,7 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <View style={{ flex: 1, padding: 16, backgroundColor: "#fff" }}>
+    <View style={{ flex: 1, padding: 16, paddingTop:45,  backgroundColor: "#fff" }}>
       <Text style={{ fontSize: 24, fontWeight: "bold", marginBottom: 12 }}>
         Recipes
       </Text>
